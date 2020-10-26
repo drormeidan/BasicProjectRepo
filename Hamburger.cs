@@ -41,4 +41,14 @@ public class Hamburger
 		return rprice;
 			
 	}
+
+	public void ReduceAmmount(ref Dictionary<int, string> IdxExtra, ref Dictionary<int, string> IdxMeat, ref Dictionary<int, string> IdxBread, ref Dictionary<string, int> ExtraAmount, ref Dictionary<string, int> MeatAmount, ref Dictionary<string, int> BreadAmount) 
+	{
+		MeatAmount[IdxMeat[this.meat]] += -1;
+		BreadAmount[IdxBread[this.bread]] += -1;
+		foreach(int item in this.extras) 
+		{
+			ExtraAmount[IdxExtra[item]] += -1;
+		}
+	}
 }
