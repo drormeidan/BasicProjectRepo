@@ -21,17 +21,33 @@ namespace BasicProject
 
             while (Convert.ToBoolean(contD))
             {
-                Console.WriteLine("choose meat: 0-meat, 1-lamb, 2-tofo");
+                //Console.WriteLine("choose meat: 0-meat, 1-lamb, 2-tofo");
+                foreach (KeyValuePair<int, string> valuePair in IdxMeat)
+                {
+                    if (MeatAmount[valuePair.Value] > 0)
+                    {
+                        Console.WriteLine("{0} -{1}", valuePair.Key, valuePair.Value);
+                    }
+                }
                 smeat = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("choose bread: 0- brown, 1-white");
+                //Console.WriteLine("choose bread: 0- brown, 1-white");
+                foreach (KeyValuePair<int, string> valuePair in IdxBread)
+                {
+                    if (BreadAmount[valuePair.Value] > 0)
+                    {
+                        Console.WriteLine("{0} -{1}", valuePair.Key, valuePair.Value);
+                    }
+                }
                 sbread = Convert.ToInt32(Console.ReadLine());
                 contE = 1;
                 while (Convert.ToBoolean(contE))
                 {
-                    // Console.WriteLine("choose extra: 0-cucamber, 1-tomato, 2-lettuce, 3-pickels, 4-onion");
                     foreach( KeyValuePair<int,string> valuePair in IdxExtra) 
                     {
-                        Console.WriteLine("{0} -{1}", valuePair.Key, valuePair.Value);
+                        if (ExtraAmount[valuePair.Value] > 0) 
+                        {
+                            Console.WriteLine("{0} -{1}", valuePair.Key, valuePair.Value);
+                        }
                     }
                     sextras.Add(Convert.ToInt32(Console.ReadLine()));
                     Console.WriteLine("add extra?: 0-No, 1-Yes");
